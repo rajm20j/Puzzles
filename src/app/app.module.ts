@@ -1,18 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { EquationService } from './playground/equation.service';
+import { PlaygroundComponent } from './playground/playground.component';
+import { OptionsComponent } from './options/options.component';
+import { ButtonComponent } from './button/button.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    PlaygroundComponent,
+    OptionsComponent,
+    ButtonComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    EquationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

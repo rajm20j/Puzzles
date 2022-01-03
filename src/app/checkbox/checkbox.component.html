@@ -1,0 +1,7 @@
+<div class="checkbox-container">
+    <div class="checkbox-items" *ngFor="let item of items" (click)="checkBoxClicked()">
+        <div class="checkbox-background" [id]="item.symbol" [ngStyle]="item.enabled ? selectedCheckboxBack : unselectedCheckboxBack">
+            <p class="checkbox-text">{{item.symbol}}</p>
+        </div>
+    </div>
+</div>

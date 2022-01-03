@@ -1,0 +1,70 @@
+@import '../../styles.scss';
+.options-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &>.options-box {
+        height: max-content;
+        width: max-content;
+        border: 1px solid black;
+        padding: 8px;
+        // padding-right: 32px;
+        h1 {
+            line-height: 0px;
+            font-family: Roboto Slab;
+            font-weight: 500;
+            font-size: 2em;
+        }
+        &>.options-list {
+            display: flex;
+            flex-direction: column;
+            margin-top: 32px;
+            line-height: 0px;
+            &>.option-item{
+                display: flex;
+                flex-direction: row;
+                background-color: transparent;
+                align-items: center;
+                justify-content: space-between;
+                &>h3 {
+                    display: flex;
+                    line-height: 0px;
+                    align-self: center;
+                    background-color: blueviolet;
+                }
+                &>.operators, &>.time, &>.lives {
+                    display: flex;
+                    overflow: auto;
+                    box-sizing: border-box;
+                    &>h3 {
+                        display: flex;
+                        line-height: 16px;
+                        height: 16px;
+                        width: 16px;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid black;
+                        margin: 8px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: $hoverBackground;
+                        }
+                    }
+                    &>.countdown, &>.liveCount{
+                        pointer-events: none;
+                        border: none;
+                        box-sizing: border-box;
+                        font-size: 90%;
+                    }
+                }
+            }
+        }
+        .button-section {
+            display: flex;
+            flex-direction: row;
+            background-color: transparent;
+        }
+    }
+}

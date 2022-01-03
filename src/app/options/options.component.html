@@ -1,0 +1,35 @@
+<div class="options-container">
+    <div class="options-box">
+        <h1>Options</h1>
+        <div class="options-list">
+            <div class="option-item">
+                <h3>Operator</h3>
+                <app-checkbox [items]="options.operators" class="operators"></app-checkbox>
+            </div>
+            <div class="option-item">
+                <h3>Time </h3>
+                <div class="time">
+                    <h3>-</h3>
+                    <h3 class="countdown">60s</h3>
+                    <h3>+</h3>
+                </div>
+            </div>
+            <div class="option-item">
+                <h3>Lives </h3>
+                <div class="lives">
+                    <h3>-</h3>
+                    <h3 class="liveCount">3</h3>
+                    <h3>+</h3>
+                </div>
+            </div>
+        </div>
+        <div class="button-section">
+            <app-button [buttonTitle]="saveBtnTitle" [buttonBackground]="setSaveBtnBackground"
+                [buttonStyle]="setBtnStyles">
+            </app-button>
+            <app-button [buttonTitle]="cancelBtnTitle" [buttonBackground]="setCancelBtnBackground"
+                [buttonStyle]="setBtnStyles" (buttonClick)="cancel()">
+            </app-button>
+        </div>
+    </div>
+</div>
