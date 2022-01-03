@@ -3,31 +3,70 @@
         <h1>Options</h1>
         <div class="options-list">
             <div class="option-item">
-                <h3>Operator</h3>
-                <app-checkbox [items]="options.operators" class="operators"></app-checkbox>
-            </div>
-            <div class="option-item">
-                <h3>Time </h3>
-                <div class="time">
-                    <h3>-</h3>
-                    <h3 class="countdown">60s</h3>
-                    <h3>+</h3>
+                <div class="option-title">Operator</div>
+                <div class="option-values operators">
+                    <div class="button-icon" id="add">+</div>
+                    <div class="button-icon" id="subtract">-</div>
+                    <div class="button-icon" id="multiply">&#215;</div>
                 </div>
             </div>
             <div class="option-item">
-                <h3>Lives </h3>
-                <div class="lives">
-                    <h3>-</h3>
-                    <h3 class="liveCount">3</h3>
-                    <h3>+</h3>
+                <div class="option-title">Enable timer?</div>
+                <div class="option-values time">
+                    <div class="button-icon" id="enable-timer">&#10003;</div>
+                </div>
+            </div>
+            <div class="option-item">
+                <div class="option-title">Time</div>
+                <div class="option-values time">
+                    <div class="button-icon">-</div>
+                    <div class="countdown">60s</div>
+                    <div class="button-icon">+</div>
+                </div>
+            </div>
+            
+            <div class="option-item">
+                <div class="option-title">Enable lives?</div>
+                <div class="option-values time">
+                    <div class="button-icon" id="enable-lives">&#10003;</div>
+                </div>
+            </div>
+            <div class="option-item">
+                <div class="option-title">Lives</div>
+                <div class="option-values lives">
+                    <div class="button-icon">-</div>
+                    <div class="liveCount">3</div>
+                    <div class="button-icon">+</div>
+                </div>
+            </div>
+            <div class="option-item">
+                <div class="option-title">Digits range</div>
+                <div class="option-values">
+                    <input class="input-text" type="number" [attr.value]="initialMinValue" [attr.min]="digitMinLength" [attr.max]="digitMaxLength"/>
+                    <div class="hyphen">-</div>
+                    <input class="input-text" type="number" [attr.value]="initialMaxValue" [attr.min]="digitMinLength" [attr.max]="digitMaxLength"/>
+                </div>
+            </div>
+            <div class="option-item">
+                <div class="option-title">Answer type</div>
+                <div class="option-values set-vertical">
+                    <div class="button-text">MCQ</div>
+                    <div class="button-text">Text</div>
+                    <div class="button-text">Both</div>
+                </div>
+            </div>
+            <div class="option-item">
+                <div class="option-title">Number of choices</div>
+                <div class="option-values">
+                    <input class="input-text" type="number" [attr.value]="initialAnsChoices" [attr.min]="ansMinChoices" [attr.max]="ansMaxChoices"/>
                 </div>
             </div>
         </div>
         <div class="button-section">
-            <app-button [buttonTitle]="saveBtnTitle" [buttonBackground]="setSaveBtnBackground"
+            <app-button [buttonTitle]="saveBtnTitle" [buttonStyleInner]="setSaveBtnBackground"
                 [buttonStyle]="setBtnStyles">
             </app-button>
-            <app-button [buttonTitle]="cancelBtnTitle" [buttonBackground]="setCancelBtnBackground"
+            <app-button [buttonTitle]="cancelBtnTitle" [buttonStyleInner]="setCancelBtnBackground"
                 [buttonStyle]="setBtnStyles" (buttonClick)="cancel()">
             </app-button>
         </div>

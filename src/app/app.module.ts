@@ -7,7 +7,6 @@ import { EquationService } from './playground/equation.service';
 import { PlaygroundComponent } from './playground/playground.component';
 import { OptionsComponent } from './options/options.component';
 import { ButtonComponent } from './button/button.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     PlaygroundComponent,
     OptionsComponent,
     ButtonComponent,
-    CheckboxComponent
   ],
   imports: [
     BrowserModule,

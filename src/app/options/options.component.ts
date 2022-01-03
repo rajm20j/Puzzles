@@ -12,6 +12,13 @@ import { IOptions } from '../model/options';
   styleUrls: ['./options.component.scss']
 })
 export class OptionsComponent implements OnInit {
+  initialMinValue: number = 1;
+  initialMaxValue: number = 2;
+  digitMinLength: number = 1;
+  digitMaxLength: number = 5;
+  initialAnsChoices: number = 3;
+  ansMinChoices: number = 2;
+  ansMaxChoices: number = 5;
   options: IOptions = {
     operators: [
       {

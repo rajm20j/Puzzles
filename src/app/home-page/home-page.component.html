@@ -1,5 +1,5 @@
 <div class="home-menu-container">
-    <app-button [buttonTitle] = "buttonTitle" (buttonClick)="navigateToPlay()"></app-button>
+    <app-button [buttonTitle] = "buttonTitle" (buttonClick)="navigateToPlay()" [buttonTextStyle]="setBtnStyles"></app-button>
     <div class="options-menu" (click)="navigateToOptions()">
         <h4>Options</h4>
     </div>

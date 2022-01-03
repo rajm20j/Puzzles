@@ -1,18 +1,17 @@
 @import '../../styles.scss';
+$iconSize: 16px;
 .options-container {
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: none auto;
     &>.options-box {
-        height: max-content;
-        width: max-content;
         border: 1px solid black;
         padding: 8px;
-        // padding-right: 32px;
         h1 {
-            line-height: 0px;
+            line-height: 0;
             font-family: Roboto Slab;
             font-weight: 500;
             font-size: 2em;
@@ -20,43 +19,84 @@
         &>.options-list {
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
             margin-top: 32px;
-            line-height: 0px;
             &>.option-item{
                 display: flex;
                 flex-direction: row;
                 background-color: transparent;
                 align-items: center;
                 justify-content: space-between;
-                &>h3 {
-                    display: flex;
-                    line-height: 0px;
-                    align-self: center;
-                    background-color: blueviolet;
+                margin-top: 16px;
+                &>.option-title{
+                    align-self: flex-start;
                 }
-                &>.operators, &>.time, &>.lives {
+                &>.option-values{
                     display: flex;
-                    overflow: auto;
-                    box-sizing: border-box;
-                    &>h3 {
-                        display: flex;
-                        line-height: 16px;
-                        height: 16px;
-                        width: 16px;
-                        align-items: center;
-                        justify-content: center;
-                        border: 1px solid black;
-                        margin: 8px;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    &>.button-icon{
+                        height: $iconSize;
+                        width: $iconSize;
+                        border: 1px solid $fontColor;
+                        text-align: center;
+                        vertical-align: middle;
+                        line-height: $iconSize;
                         cursor: pointer;
+                        box-sizing: border-box;
                         &:hover{
-                            background-color: $hoverBackground;
+                            background-color: $fontColor;
+                            color: $primary;
                         }
                     }
-                    &>.countdown, &>.liveCount{
-                        pointer-events: none;
-                        border: none;
+                    &>.countdown, &>.liveCount, &>.hyphen{
+                        height: $iconSize;
+                        width: fit-content;
+                        margin-left: 4px;
+                        margin-right: 4px;
+                        text-align: center;
+                        vertical-align: middle;
+                        font-size: 0.8em;
+                        line-height: $iconSize;
+                        cursor: pointer;
+                    }
+                    &>.input-text{
+                        height: $iconSize;
+                        width: $iconSize;
+                        padding: 0;
+                        text-align: center;
+                        vertical-align: middle;
+                        font-size: 0.75em;
+                        line-height: 0;
+                        cursor: pointer;
+                        border: 1px solid $fontColor;
+                        margin: 0;
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                        }
+                    }
+                    &>.button-text{
+                        height: $iconSize;
+                        width: fit-content;
+                        border: 1px solid $fontColor;
+                        box-shadow: 1px 1px black;
+                        text-align: center;
+                        vertical-align: middle;
+                        line-height: calc($iconSize - 15%);
+                        font-size: 0.75em;
+                        font-weight: 400;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        margin-bottom: 4px;
+                        border-radius: 4px;
+                        cursor: pointer;
                         box-sizing: border-box;
-                        font-size: 90%;
+                        &:hover{
+                            background-color: $fontColor;
+                            color: $primary;
+                        }
                     }
                 }
             }
@@ -65,6 +105,18 @@
             display: flex;
             flex-direction: row;
             background-color: transparent;
+            margin-top: 16px;
         }
     }
+}
+
+#enable-timer, #enable-lives{
+    font-size: 0.75em;
+}
+
+.set-vertical {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-end !important;
 }
