@@ -127,3 +127,7 @@ $iconSize: 16px;
     justify-content: flex-start !important;
     align-items: flex-end !important;
 }
+
+.selected {
+    background-color: $selected;
+}

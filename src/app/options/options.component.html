@@ -5,9 +5,7 @@
             <div class="option-item">
                 <div class="option-title">Operator</div>
                 <div class="option-values operators">
-                    <div class="button-icon" id="add">+</div>
-                    <div class="button-icon" id="subtract">-</div>
-                    <div class="button-icon" id="multiply">&#215;</div>
+                    <div *ngFor="let operator of options.operators" class="button-icon" (mouseover)="operator.isHovered = true" (mouseleave)="operator.isHovered = false" [id]="operator.symbol">{{operator.symbol}}</div>
                 </div>
             </div>
             <div class="option-item">

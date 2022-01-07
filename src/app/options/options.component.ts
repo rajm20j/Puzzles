@@ -4,7 +4,9 @@ import { Utils } from '../model/utils';
 import { Router } from '@angular/router';
 import { Routes } from '../model/routes';
 import { EquationService } from '../playground/equation.service';
-import { IOptions } from '../model/options';
+import { IOptions, IOperator } from '../model/options';
+import { OperatorType } from '../model/operatorType';
+import { AnsType } from '../model/ansType';
 
 @Component({
   selector: 'app-options',
@@ -27,6 +29,35 @@ export class OptionsComponent implements OnInit {
   largestDigit: number = 2;
   maxDigit: number = 4;
   numberOfChoices: number = 5;
+  operatorType: typeof OperatorType = OperatorType;
+  options: IOptions = {
+    operators: [
+      {
+        symbol: OperatorType.ADD,
+        enabled: true,
+        isHovered: false
+      },
+      {
+        symbol: OperatorType.SUBTRACT,
+        enabled: true,
+        isHovered: false
+      },
+      {
+        symbol: OperatorType.MULTIPLY,
+        enabled: true,
+        isHovered: false
+      },
+    ],
+    enableTimer: true,
+    time: 90,
+    enableLives: true,
+    lives: 3,
+    lowerDigit: 1,
+    uppderDigit: 1,
+    answerType: AnsType.MCQ,
+    areChoicesEnabled: false,
+    numberOfChoices: 2
+  };
 
   ngOnInit(): void {
       this.updateSmallestDigitArray();
