@@ -20,14 +20,14 @@ $iconSize: 16px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            margin-top: 32px;
+            margin-top: 16px;
             &>.option-item{
                 display: flex;
                 flex-direction: row;
                 background-color: transparent;
                 align-items: center;
                 justify-content: space-between;
-                margin-top: 16px;
+                margin-top: 8px;
                 &>.option-title{
                     align-self: flex-start;
                 }
@@ -97,6 +97,13 @@ $iconSize: 16px;
                             background-color: $fontColor;
                             color: $primary;
                         }
+                    }
+                    &>.select{
+                        border: 1px solid black;
+                        font-size: 0.8em;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        padding-inline: 0.25em;
                     }
                 }
             }

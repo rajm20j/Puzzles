@@ -24,7 +24,7 @@
                     <div class="button-icon">+</div>
                 </div>
             </div>
-            
+
             <div class="option-item">
                 <div class="option-title">Enable lives?</div>
                 <div class="option-values time">
@@ -42,11 +42,25 @@
             <div class="option-item">
                 <div class="option-title">Digits range</div>
                 <div class="option-values">
-                    <input class="input-text" type="number" [attr.value]="initialMinValue" [attr.min]="digitMinLength" [attr.max]="digitMaxLength"/>
+                    <select aria-label="smallestDigitSelect" class="select">
+                        <option *ngFor="let digit of smallestDigitArray" [value]="digit">{{digit}}</option>
+                    </select>
                     <div class="hyphen">-</div>
-                    <input class="input-text" type="number" [attr.value]="initialMaxValue" [attr.min]="digitMinLength" [attr.max]="digitMaxLength"/>
+                    <select aria-label="largestDigitSelect" class="select">
+                        <option *ngFor="let digit of largestDigitArray" [value]="digit">{{digit}}</option>
+                    </select>
                 </div>
             </div>
+            <!-- <div class="option-item">
+                <div class="option-title">Digits range</div>
+                <div class="option-values">
+                    <input class="input-text" type="number" [attr.value]="initialMinValue" [attr.min]="digitMinLength"
+                        [attr.max]="digitMaxLength" />
+                    <div class="hyphen">-</div>
+                    <input class="input-text" type="number" [attr.value]="initialMaxValue" [attr.min]="digitMinLength"
+                        [attr.max]="digitMaxLength" />
+                </div>
+            </div> -->
             <div class="option-item">
                 <div class="option-title">Answer type</div>
                 <div class="option-values set-vertical">
@@ -58,9 +72,18 @@
             <div class="option-item">
                 <div class="option-title">Number of choices</div>
                 <div class="option-values">
-                    <input class="input-text" type="number" [attr.value]="initialAnsChoices" [attr.min]="ansMinChoices" [attr.max]="ansMaxChoices"/>
+                    <select aria-label="largestDigitSelect" class="select">
+                        <option *ngFor="let choices of numberOfChoicesArray" [value]="choices">{{choices}}</option>
+                    </select>
                 </div>
             </div>
+            <!-- <div class="option-item">
+                <div class="option-title">Number of choices</div>
+                <div class="option-values">
+                    <input class="input-text" type="number" [attr.value]="initialAnsChoices" [attr.min]="ansMinChoices"
+                        [attr.max]="ansMaxChoices" />
+                </div>
+            </div> -->
         </div>
         <div class="button-section">
             <app-button [buttonTitle]="saveBtnTitle" [buttonStyleInner]="setSaveBtnBackground"

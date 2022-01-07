@@ -19,33 +19,42 @@ export class OptionsComponent implements OnInit {
   initialAnsChoices: number = 3;
   ansMinChoices: number = 2;
   ansMaxChoices: number = 5;
-  options: IOptions = {
-    operators: [
-      {
-        symbol: '+',
-        enabled: false
-      },
-      {
-        symbol: '-',
-        enabled: true
-      },
-      {
-        symbol: '×',
-        enabled: false
-      }
-    ],
-    time: '60',
-    lives: 3
-  }
-
-  btnStyles!: Record<string, string>;
-  constructor(private router: Router, private equationService: EquationService) { }
+  
+  smallestDigitArray: number[] = [];
+  largestDigitArray: number[] = [];
+  numberOfChoicesArray: number[] = [];
+  smallestDigit: number = 1;
+  largestDigit: number = 2;
+  maxDigit: number = 4;
+  numberOfChoices: number = 5;
 
   ngOnInit(): void {
+      this.updateSmallestDigitArray();
+      this.updateLargestDigitArray();
+      this.updateNumberOfChoices();
+  }
+  
+  btnStyles!: Record<string, string>;
+  constructor(private router: Router, private equationService: EquationService) {
   }
 
-  setOptions() {
+  private updateSmallestDigitArray() {
+    for(let i: number = this.smallestDigit; i<=this.maxDigit; i++) {
+      this.smallestDigitArray.push(i);
+    }
+    console.log(this.smallestDigitArray);
+  }
 
+  private updateLargestDigitArray() {
+    for(let i: number = this.smallestDigit; i<=this.maxDigit; i++) {
+      this.largestDigitArray.push(i);
+    }
+  }
+
+  private updateNumberOfChoices() {
+    for(let i: number = 2; i<=this.numberOfChoices; i++) {
+      this.numberOfChoicesArray.push(i);
+    }
   }
 
   get setBtnStyles() {
